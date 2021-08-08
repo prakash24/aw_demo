@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  django_gunicorn:
+    container_name: web-application-container
+    hostname: web-application-container
+    volumes:
+      - static:/static
+    env_file:
+      - .env
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+  nginx:
+    container_name: reverse-proxy-container
+    hostname: reverse-proxy-container
+    build: ./nginx
+    volumes:
+      - static:/static
+    ports:
+      - "8081:8081"
+    depends_on: 
+      - django_gunicorn
+
+volumes:
+  static:

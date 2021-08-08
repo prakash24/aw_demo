@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  DEBUG: "True"
+  SECRET_KEY: ahs&*a!)#79uy3^h*0fv#p1%e+@_2lvh%@p@e41x#n@db(&(!^
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    service: django-gunicorn-nginx-env
+  name: env
+  namespace: aw-demo
