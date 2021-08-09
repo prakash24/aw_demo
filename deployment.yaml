@@ -1,11 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     service: django-gunicorn-nginx
   name: django-gunicorn-nginx-deploy
-  namespace: aw-demo
 spec:
   replicas: 2
   selector:

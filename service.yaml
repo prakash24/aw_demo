@@ -1,11 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: null
   labels:
     service: django-gunicorn-nginx
   name: django-gunicorn-nginx-service
-  namespace: aw-demo
 spec:
   ports:
     - name: "8081"
